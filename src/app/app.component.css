@@ -1,0 +1,40 @@
+:host ::ng-deep * {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 200;
+  }
+  
+  :host ::ng-deep html, body {
+    
+    background: white;
+    margin: 20px;
+    color: #3e4144;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  
+  :host ::ng-deep dd {
+    font-weight: bold;
+  }
+  
+  :host ::ng-deep button {
+    background-color: black;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px 10px;
+  }
+  
+  :host ::ng-deep button:hover {
+    background-color: #3e4144;
+  }
+  
+  :host ::ng-deep button:focus{ 
+    outline: none;
+  }
+  
+  :host ::ng-deep .p-1 {
+    padding: 1px;
+  }
