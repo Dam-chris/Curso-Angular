@@ -1,0 +1,25 @@
+<h3>Agregar <small>{{ new.name }}</small></h3>
+ <hr>
+<form (ngSubmit)="add()">
+    <input 
+        type="text" 
+        placeholder="Nombre" 
+        [value]="new.name"
+        name="name"
+        [(ngModel)]="new.name">
+        <!--[value] se usa para el data biding de una variable definida en 
+            la clase main-page ts con lo que su uso no es igual 
+            a del value normal, [(ngModel)] usa el binding para emitir '[]'
+            setear '()' el objeto 
+            (y esto lo hace en tiempo real con lo que se obserban los 
+            cambios al momento, por ello es que se setean 
+            todas nuestras llamdas a esa variable)-->
+    <input 
+        type="number" 
+        placeholder="Poder" 
+        [value]="new.power"
+        name="power" 
+        [(ngModel)]="new.power">
+
+    <button type="submit" >Agregar</button>
+</form>

@@ -38,3 +38,20 @@
   :host ::ng-deep .p-1 {
     padding: 1px;
   }
+
+  :host ::ng-deep .row
+  {
+    display: flex;
+  }
+
+  :host ::ng-deep .col
+  {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  :host ::ng-deep input
+  {
+    display: block;
+    margin: 5px;
+  }
+

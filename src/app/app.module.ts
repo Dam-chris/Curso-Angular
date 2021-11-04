@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AccumulateComponent } from './accumulate/accumulate/accumulate.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { AccumulateModule } from './accumulate/accumulate.module';
+import { DbzModule } from './dbz/dbz.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AccumulateModule } from './accumulate/accumulate.module';
   imports: [
     BrowserModule,
     HeroesModule,
-    AccumulateModule
+    AccumulateModule,
+    DbzModule
   ],
   providers: [],
   bootstrap: [AppComponent]
