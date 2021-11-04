@@ -9,10 +9,15 @@ import { DbzService } from '../services/dbz.service';
 })
 export class AddComponent 
 {
-  @Input() new: Character;
+  @Input() new: Character = {
+    name:'',
+    power:0
+  };
 
   //El output sirve para emitir eventos (event emitter se debe importar siempre desde angualar core)
-  @Output() onNewCharacter: EventEmitter<Character> =  new EventEmitter();
+  //@Output() onNewCharacter: EventEmitter<Character> =  new EventEmitter();
+  
+  constructor(private dbzservice: DbzService) {}
 
   add()
   {
@@ -23,12 +28,17 @@ export class AddComponent
 
     console.log(this.new);
 
-    //auqi se emite el objeto
-    this.onNewCharacter.emit( this.new );
+    //aqui se emite el objeto
+    //this.onNewCharacter.emit( this.new );
+
+    //llamada a la funcion definida en dbzservice
+    this.dbzservice.addNewCharacter( this.new );
     
-    this.new = {name: '', power: 0};
+    this.new = {
+      name: '', 
+      power: 0
+    };
     
   }
 
-  constructor(private dbzservice: DbzService) {}
 }

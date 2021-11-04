@@ -13,23 +13,10 @@ export class MainPageComponent
   //inyeccion de dependencias (en este  caso inyectamos el servicio)
   constructor(private dbzservice: DbzService) {}
 
-  get characters():Character[]
-  {
-    return this.dbzservice.characters;
-  }
-
-
-  new: Character = { name: 'Maestro Roshi', power: 2000 };
-  
-
-  addNewCharacter( arg: Character)
-  {
-
-    this.characters.push(arg);
-    //debugger; // el equivalente a un vardump en js, (detiene la app)
-    console.log(this.characters);
-    
-  }
+  new: Character = { 
+    name: 'Maestro Roshi', 
+    power: 2000 
+  };
 
 
 }
