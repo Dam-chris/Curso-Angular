@@ -1,0 +1,4 @@
+:host ::ng-deep .small-flag
+{
+    width: 50px;
+}

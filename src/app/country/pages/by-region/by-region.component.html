@@ -1,0 +1,29 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+
+    <h3>Buscar por region <small>{{ regionActive | titlecase }}</small></h3>
+    <hr>
+    
+    <h5>Seleccione la region</h5>
+    
+    <div class="row my-3">
+        <div class="col">
+            <!--forma de usar condicionales en las clases de estilo-->
+            <!--[ngClass]="{
+                'btn-primary': regionActive == region,
+                'btn-outline': regionActive != region
+            }"-->
+            <!--[] lo colocado entre corchetes debe ser una evaluacion de js-->
+            <button *ngFor="let region of regions"
+                [class]="(regionActive === region) ? 'btn btn-primary':'btn btn-outline-primary'"
+                (click)="activateRegion( region )">
+                {{ region | titlecase }}
+            </button>
+        </div>
+    </div>
+    
+</div>
+<div *ngIf="countries.length > 0" class="row">
+    <div class="col">
+        <app-country-table [countries]="countries"></app-country-table>
+    </div>
+</div>
