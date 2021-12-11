@@ -1,0 +1,40 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../auth/services/auth.service';
+import { Auth } from '../../../auth/interfaces/auth.interface';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styles: [`
+    .container
+    {
+      margin:15px;
+    }
+  `
+  ]
+})
+export class HomeComponent implements OnInit 
+{
+
+  constructor( private router:Router, 
+              private authService: AuthService ) { }
+
+  get auth() :Auth
+  {
+    return this.authService.auth;
+  }
+
+  ngOnInit() 
+  { 
+    console.log(this.auth);
+    
+  }
+
+
+  logout()
+  {
+    this.router.navigate(['./auth']);
+  }
+
+}
